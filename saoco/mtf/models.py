@@ -20,9 +20,9 @@ class Event(models.Model):
             " 2023."
         ),
     )
-    logo = models.URLField(
+    logo = models.ImageField(
         verbose_name="Logo",
-        help_text="URL del logo del evento.",
+        help_text="Imagen correspondiente al logo del evento.",
     )
     instagram = models.CharField(
         max_length=30,
@@ -31,3 +31,10 @@ class Event(models.Model):
             "Cuenta de usuario de instagram. Ejemplo: @margaritatimbafest."
         ),
     )
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Evento"
+        verbose_name_plural = "Eventos"
